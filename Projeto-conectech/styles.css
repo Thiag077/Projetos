@@ -1,0 +1,480 @@
+/* Fundo com o nome da empresa */
+body::after,
+body::before,
+body > .background-text {
+    content: "CONECTECH";
+    position: fixed;
+    font-size: 5vw;
+    font-weight: bold; /* Negrito adicionado */
+    color: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 0.8;
+    transform: rotate(-45deg);
+}
+
+/* Posicionamento dos textos */
+body::after {
+    top: 10%;
+    left: -20%;
+}
+
+body::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body > .background-text {
+    top: 90%;
+    left: 120%;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1e1e1e, #333);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo .logo-img {
+    height: 120px;
+    width: 320px;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    background-color: #ffffff; /* Fundo branco atrás da logo */
+    padding: 5px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+}
+
+header .logo .logo-img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em; /* Tamanho da fonte aumentado */
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+}
+
+header .btn-orcamento {
+    background-color: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header .btn-orcamento:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+    nav ul.active {
+        display: flex;
+    }
+}
+
+/* Hero Section com Imagem de Fundo */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('assets/images/test\ site.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Cobrir toda a área */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhorar a legibilidade */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.hero-buttons .btn {
+    background-color: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* Serviços */
+#servicos {
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.servico-card i {
+    font-size: 2.5em;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Sobre Nós e Projetos */
+#sobre-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#sobre {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+#sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#sobre h3 {
+    font-size: 1.8em; /* Tamanho da fonte aumentado */
+    margin-bottom: 15px;
+}
+
+#sobre p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#sobre ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sobre ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#sobre ul li span {
+    font-weight: bold; /* Palavras-chave em negrito */
+}
+
+#projetos {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+#projetos h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Estilo do Slider */
+.projetos-slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projetos-slider .slide {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.projetos-slider .slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Botões de navegação do slider */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Contato e Footer */
+#contato-footer {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1e1e1e, #333);
+    color: #fff;
+}
+
+#contato {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contato form input, #contato form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#contato form input:focus, #contato form textarea:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+#contato form button {
+    background-color: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#contato form button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+.contato-info {
+    margin-top: 20px;
+}
+
+.contato-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.contato-info i {
+    margin-right: 10px;
+    color: #FFD700;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #333);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+footer .social-media {
+    display: flex;
+    gap: 20px;
+}
+
+footer .social-media a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+footer .copyright {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Botão "Voltar ao Topo" */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #FFA500;
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #sobre-projetos {
+        flex-direction: column;
+    }
+
+    #sobre, #projetos {
+        width: 100%;
+    }
+}
